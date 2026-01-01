@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+#Nyan{
+  position: fixed;
+  top: 100%;
+  left: 48%;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+:root {
+  color: #565656;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem; /* Use relative font size */
+  line-height: 1.7;
+}
+html {
+    overflow: hidden;
+    margin: 0;
+}
+body{
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 1rem; /* Use relative font size */
+}
+button{
+    padding: 10px 20px;
+    background-color: rgb(245, 245, 163);
+    color: rgb(190, 96, 112);
+    box-shadow: none;
+    font-size: 20px;
+    border-color: rgb(255, 214, 79);
+    border-image: none;
+    border-style: double;
+}
+button:hover{
+    padding: 15px 25px;
+    cursor: pointer;
+}
+.wrapper {
+  max-width: 90%; /* Adjust max width for better fit on mobile */
+  padding: 1rem; /* Use relative padding */
+  border-radius: 0.2rem;
+  font-size: 1rem; /* Use relative font size */
+}
