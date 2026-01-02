@@ -170,18 +170,16 @@ ETH: 0x92FcE1777558144dECAFF0a4229118681D9477F2</b></p>
 <!-- Cat.js integrated -->
 <script>
 $(document).ready(function() {
-    // Create the background container if not present
     var catBackground = $('#cat-background');
 
     function spawnCat() {
-        var sf = 200;   // up/down animation speed
-        var st = 10000; // horizontal animation duration
+        var sf = 200; // up/down speed
+        var st = 10000; // horizontal speed
         var imgPath = '/nyan/img/design/';
 
-        // Random vertical position inside viewport
         var topPos = Math.random() * (window.innerHeight - 150);
 
-        // Cat div
+        // Cat element
         var cat = $('<div class="cat"></div>').css({
             'background': 'url(' + imgPath + 'cat.gif) 50% 0 repeat',
             'width': window.innerWidth < 768 ? '200px' : '450px',
@@ -192,35 +190,35 @@ $(document).ready(function() {
             'z-index': 1
         });
 
-        // Up/down animation
-        function up(){ cat.animate({'marginTop': '-=10'}, sf, down); }
-        function down(){ cat.animate({'marginTop': '+=10'}, sf, up); }
-        up();
+        // Up/down animation using safe recursive callback
+        function animateUpDown(el) {
+            el.animate({'marginTop': '-=10'}, sf, function() {
+                el.animate({'marginTop': '+=10'}, sf, function() {
+                    animateUpDown(el); // recursion
+                });
+            });
+        }
+        animateUpDown(cat);
 
         // Container for horizontal movement
         var container = $('<div class="cat-container"></div>').css({
             'position': 'absolute',
             'top': topPos + 'px',
-            'left': '-450px', // start off-screen
+            'left': '-450px',
             'pointer-events': 'none',
             'z-index': 1
         }).append(cat);
 
         catBackground.append(container);
 
-        // Animate across the screen
-        container.animate({'left': '100%'}, st, 'linear', function(){
+        container.animate({'left': '100%'}, st, 'linear', function() {
             container.remove();
         });
     }
 
-    // Spawn first cat immediately
     spawnCat();
-
-    // Spawn a new cat every 5 seconds
     setInterval(spawnCat, 5000);
 });
 </script>
-
 </body>
 </html>
