@@ -14,13 +14,13 @@ html, body {
     padding: 0;
     font-family: Arial, sans-serif;
     min-height: 100vh;
-    overflow-x: hidden; /* no horizontal scroll */
+    overflow-x: hidden;
     transition: background 0.5s ease;
 }
 
 .wrapper {
     position: relative;
-    z-index: 1; /* content above cats */
+    z-index: 2; /* content above cats */
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
@@ -76,7 +76,7 @@ a img {
     height: 100%;
     pointer-events: none; /* allow scrolling and clicks */
     overflow: hidden;
-    z-index: 0; /* behind content */
+    z-index: 1; /* behind content */
 }
 .cat-container {
     position: absolute;
@@ -167,7 +167,7 @@ ETH: 0x92FcE1777558144dECAFF0a4229118681D9477F2</b></p>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="./assets/github-profile-widget.js"></script>
 
-<!-- Cat.js integrated -->
+<!-- CSP-safe cat.js -->
 <script>
 $(document).ready(function() {
     var catBackground = $('#cat-background');
@@ -176,37 +176,27 @@ $(document).ready(function() {
         var sf = 200; // up/down speed
         var st = 10000; // horizontal speed
         var imgPath = '/nyan/img/design/';
-
         var topPos = Math.random() * (window.innerHeight - 150);
 
-        // Cat element
         var cat = $('<div class="cat"></div>').css({
-            'background': 'url(' + imgPath + 'cat.gif) 50% 0 repeat',
+            'background': 'url(' + imgPath + 'cat.gif') + ' 50% 0 repeat',
             'width': window.innerWidth < 768 ? '200px' : '450px',
             'height': 'auto',
-            'position': 'absolute',
-            'top': topPos + 'px',
-            'pointer-events': 'none',
-            'z-index': 1
+            'top': topPos + 'px'
         });
 
-        // Up/down animation using safe recursive callback
         function animateUpDown(el) {
             el.animate({'marginTop': '-=10'}, sf, function() {
                 el.animate({'marginTop': '+=10'}, sf, function() {
-                    animateUpDown(el); // recursion
+                    animateUpDown(el);
                 });
             });
         }
         animateUpDown(cat);
 
-        // Container for horizontal movement
         var container = $('<div class="cat-container"></div>').css({
-            'position': 'absolute',
             'top': topPos + 'px',
-            'left': '-450px',
-            'pointer-events': 'none',
-            'z-index': 1
+            'left': '-450px'
         }).append(cat);
 
         catBackground.append(container);
@@ -220,5 +210,6 @@ $(document).ready(function() {
     setInterval(spawnCat, 5000);
 });
 </script>
+
 </body>
 </html>
