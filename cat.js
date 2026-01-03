@@ -17,7 +17,6 @@ var scbf = function(d, t) {
         'castlevania.gif'
     ];
 
-    var randomGif = gifs[Math.floor(Math.random() * gifs.length)];
     var direction = 1; // 1 = left→right, -1 = right→left
 
     // bobbing animation
@@ -32,13 +31,13 @@ var scbf = function(d, t) {
     i.down = down;
 
     $(i).addClass('i').css({
-        background: 'url(' + img + randomGif + ') no-repeat',
-        backgroundSize: 'contain',
         height: '100%',
         width: '100%',
         position: 'absolute',
         top: 0,
         left: 0,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain',
         transformOrigin: 'center'
     });
 
@@ -59,15 +58,19 @@ var scbf = function(d, t) {
     s.parentNode.insertBefore(c, s);
 
     function walk() {
+        // 🎲 pick a new GIF every pass
+        var randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+        $(i).css({
+            backgroundImage: 'url(' + img + randomGif + ')'
+        });
+
         var startLeft, endLeft, scale;
 
         if (direction === 1) {
-            // left → right (facing right)
             startLeft = -400;
             endLeft = $(window).width() + 400;
             scale = 1;
         } else {
-            // right → left (facing left)
             startLeft = $(window).width() + 400;
             endLeft = -400;
             scale = -1;
@@ -82,7 +85,7 @@ var scbf = function(d, t) {
             'linear',
             function() {
                 direction *= -1; // flip direction
-                walk();          // loop forever
+                walk();          // next pass, new GIF
             }
         );
     }
