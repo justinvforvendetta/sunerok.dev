@@ -25,8 +25,8 @@ var scbf = function(d,t){
     $(i).addClass('i')
 		.css({
 		'background' : 'url(' + img + 'cat.gif) 100% 0 no-repeat',
-		'height' : '100%',
-		'width' : '450px', 
+		'height' : '50%',
+		'width' : '50%', 
 		'position' : 'absolute',
 		'right' : '0'
     	});
