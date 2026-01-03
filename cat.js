@@ -7,7 +7,7 @@ var scbf = function(d, t) {
         img = '/nyan/img/design/';
 
     // --- Hardcoded array of GIFs ---
-    var gifs = ['megaman.gif', 'dragonwarrior.gif', 'cat.gif', 'qbert.gif', 'pacman.gif', 'castlevania.gif'];
+    var gifs = ['megaman.gif', 'dragonwarrior.gif', 'cat.gif', 'qbert.gif', 'metroid.gif', 'castlevania.gif'];
     var randomGif = gifs[Math.floor(Math.random() * gifs.length)];
 
     var up = function() {
