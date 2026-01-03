@@ -18,7 +18,7 @@ var scbf = function(d,t){
     
     $(i).addClass('i')
         .css({
-            'background' : 'url(' + img + 'cat.gif) 100% 0 no-repeat',
+            'background' : 'url(' + img + 'megaman.gif) 100% 0 no-repeat',
             'height' : '100%',
             'width' : '450px', 
             'position' : 'absolute',
