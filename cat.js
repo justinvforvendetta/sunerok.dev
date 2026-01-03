@@ -7,7 +7,7 @@ var scbf = function(d, t) {
         img = '/nyan/img/design/';
 
     // --- Hardcoded array of GIFs ---
-    var gifs = ['megaman.gif', 'dragonwarrior.gif', 'cat.gif', 'qbert.gif', 'metroid.gif', 'castlevania.gif'];
+    var gifs = ['megaman.gif', 'dragonwarrior.gif', 'tmnt.gif', 'cat.gif', 'qbert.gif', 'metroid.gif', 'castlevania.gif'];
     var randomGif = gifs[Math.floor(Math.random() * gifs.length)];
 
     var up = function() {
@@ -40,13 +40,14 @@ var scbf = function(d, t) {
             });
         })
         .css({
-            'position' : 'absolute',
+            'position' : 'fixed',
             'left' : '-200px',
             'top' : '200px',
             'z-index' : '100',
             'width' : '350px',
             'height' : '350px',
-            'background' : 'none'   // trail removed
+			pointerEvents: 'none',
+            'background' : 'none'
         })
         .html(i);
 
