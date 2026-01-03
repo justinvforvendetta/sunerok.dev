@@ -24,7 +24,7 @@ var scbf = function(d, t) {
         .css({
             'background' : 'url(' + img + randomGif + ') 100% 0 no-repeat',
             'height' : '100%',
-            'width' : '450px', 
+            'width' : '100%', 
             'position' : 'absolute',
             'right' : '0'
         });
