@@ -13,7 +13,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    min-height: 100vh;
+    min-height: 100%;
     overflow-x: hidden;
     transition: background 0.5s ease;
 }
@@ -70,13 +70,21 @@ table td {
     height: auto;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
-    table, table tr, table td {
+    table {
+        display: block;
+    }
+
+    table tr {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    table td {
         display: block;
         width: 100%;
-        margin-bottom: 15px;
     }
+	
     .header-content img {
         max-width: 90%;
         height: auto;
@@ -109,7 +117,6 @@ table td {
     body {
         overflow-y: auto;
     }
-}
 }
 </style>
 </head>
