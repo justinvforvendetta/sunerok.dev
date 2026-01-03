@@ -2,8 +2,8 @@ var scbf = function(d,t){
     var c = d.createElement(t),
 	i = d.createElement(t),
 	s = d.getElementsByTagName(t)[0],
-	sf = 200,
-	st = 10000,
+	sf = 200 * 0.75;  // 150 ms
+    st = 10000 * 0.75; // 7500 ms
 	img = '/nyan/img/design/';
 	
     var up = function()
@@ -48,8 +48,8 @@ var scbf = function(d,t){
 		    'left' : '-200px',
 		    'top' : '200px',
 		    'z-index' : '100',
-		    'width' : '350px',
-		    'height' : '350px',
+		    'width' : '250px',
+		    'height' : '250px',
 		    'position' : 'absolute',
 			'background' : 'url(' + img + 'trail.gif) 100% 0 repeat-x',
 		})
