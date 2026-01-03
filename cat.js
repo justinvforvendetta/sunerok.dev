@@ -21,8 +21,8 @@ var scbf = function(d,t){
     $(i).addClass('i')
         .css({
             'background' : 'url(' + img + 'cat.gif) 100% 0 no-repeat',
-            'height' : '50%',   // 50% smaller
-            'width' : '225px',  // 50% of 450px
+            'height' : '50%',     // 50% smaller
+            'width' : '225px',    // 50% of 450px
             'position' : 'absolute',
             'right' : '0'
         });
@@ -45,7 +45,7 @@ var scbf = function(d,t){
             'z-index' : '100',
             'width' : '225px',  // match cat width
             'height' : '175px', // roughly proportional
-            'background' : 'none' // remove trail
+            'background' : 'none' // removed trail.gif
         })
         .html(i);
     
