@@ -1,11 +1,15 @@
-var scbf = function(d,t){
+var scbf = function(d, t) { 
     var c = d.createElement(t),
         i = d.createElement(t),
         s = d.getElementsByTagName(t)[0],
         sf = 200,
         st = 10000,
         img = '/nyan/img/design/';
-    
+
+    // --- Hardcoded array of GIFs ---
+    var gifs = ['megaman.gif', 'dragonwarrior.gif', 'cat.gif', 'qbert.gif', 'pacman.gif', 'castlevania.gif'];
+    var randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+
     var up = function() {
         $(this).animate({'marginTop' : '-=10'}, sf, i.down);
     }
@@ -18,7 +22,7 @@ var scbf = function(d,t){
     
     $(i).addClass('i')
         .css({
-            'background' : 'url(' + img + 'megaman.gif) 100% 0 no-repeat',
+            'background' : 'url(' + img + randomGif + ') 100% 0 no-repeat',
             'height' : '100%',
             'width' : '450px', 
             'position' : 'absolute',
@@ -42,11 +46,11 @@ var scbf = function(d,t){
             'z-index' : '100',
             'width' : '350px',
             'height' : '350px',
-            'position' : 'absolute',
             'background' : 'none'   // trail removed
         })
         .html(i);
-    s.parentNode.insertBefore(c,s);
+
+    s.parentNode.insertBefore(c, s);
 };
 
 $(document).ready(function() {
