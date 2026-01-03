@@ -49,7 +49,7 @@ table td {
 }
 
 /* Social icons */
-a img {
+.social-icons a img {
     margin: 5px;
     vertical-align: middle;
 }
@@ -61,7 +61,11 @@ a img {
         width: 100%;
         margin-bottom: 15px;
     }
-    a img {
+    .header-content img {
+        max-width: 90%;
+        height: auto;
+    }
+    .social-icons a img {
         height: 32px;
         width: 32px;
     }
@@ -79,7 +83,7 @@ a img {
     z-index: 1; /* behind content */
 }
 .cat-container {
-    position: absolute;
+    position: fixed; /* fixed keeps it visible on scroll */
     pointer-events: none;
 }
 .cat {
@@ -100,24 +104,14 @@ a img {
 
 <div class="wrapper">
 
-<!-- Background color changer -->
-<script>
-function random_bg_color() {
-    const x = Math.floor(Math.random() * 256);
-    const y = Math.floor(Math.random() * 256);
-    const z = Math.floor(Math.random() * 256);
-    const bgColor = `rgb(${x}, ${y}, ${z})`;
-    document.body.style.background = bgColor;
-}
-random_bg_color();
-</script>
+<!-- Header content (GitHub + crypto) -->
+<div class="header-content">
+    <github-profile-widget username="JustinVforVendetta"></github-profile-widget>
 
-<!-- GitHub widget -->
-<github-profile-widget username="JustinVforVendetta"></github-profile-widget>
-
-<!-- Crypto addresses -->
-<p><b>XVG: DBoF2jddpxZwg1fwcEGm6wDAEZzMbrweMP<br>
-ETH: 0x92FcE1777558144dECAFF0a4229118681D9477F2</b></p>
+    <!-- Crypto addresses -->
+    <p><b>XVG: DBoF2jddpxZwg1fwcEGm6wDAEZzMbrweMP<br>
+    ETH: 0x92FcE1777558144dECAFF0a4229118681D9477F2</b></p>
+</div>
 
 <!-- GitHub achievements -->
 <p><a style="text-decoration:none" href="https://github.com/justinvforvendetta?tab=achievements" target="_blank"><b>Github Achievements:</b></a></p>
@@ -141,7 +135,7 @@ ETH: 0x92FcE1777558144dECAFF0a4229118681D9477F2</b></p>
 </table>
 
 <!-- Social links -->
-<div>
+<div class="social-icons">
 <a href="https://x.com/justinvendetta" target="_blank"><img src="./assets/twitter.png" height="36" width="36"></a>
 <a href="https://www.twitch.tv/sunerok" target="_blank"><img src="./assets/twitch.png" height="36" width="36"></a>
 <a href="https://discordapp.com/users/325022612428161024" target="_blank"><img src="./assets/discord.png" height="36" width="36"></a>
@@ -167,41 +161,51 @@ ETH: 0x92FcE1777558144dECAFF0a4229118681D9477F2</b></p>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="./assets/github-profile-widget.js"></script>
 
+<!-- Background color changer -->
+<script>
+function random_bg_color() {
+    const x = Math.floor(Math.random() * 256);
+    const y = Math.floor(Math.random() * 256);
+    const z = Math.floor(Math.random() * 256);
+    document.body.style.background = `rgb(${x},${y},${z})`;
+}
+random_bg_color();
+</script>
+
 <!-- CSP-safe cat.js -->
 <script>
 $(document).ready(function() {
-    var catBackground = $('#cat-background');
+    const catBg = $('#cat-background');
 
     function spawnCat() {
-        var sf = 200; // up/down speed
-        var st = 10000; // horizontal speed
-        var imgPath = '/nyan/img/design/';
-        var topPos = Math.random() * (window.innerHeight - 150);
+        const imgPath = '/nyan/img/design/';
+        const catWidth = window.innerWidth < 768 ? 200 : 450;
+        const catHeight = 150; // approximate
+        const topPos = Math.random() * (window.innerHeight - catHeight);
 
-        var cat = $('<div class="cat"></div>').css({
-            'background': 'url(' + imgPath + 'cat.gif') + ' 50% 0 repeat',
-            'width': window.innerWidth < 768 ? '200px' : '450px',
+        const cat = $('<div class="cat"></div>').css({
+            'width': catWidth + 'px',
             'height': 'auto',
             'top': topPos + 'px'
         });
 
+        const container = $('<div class="cat-container"></div>').css({
+            'top': topPos + 'px',
+            'left': -catWidth + 'px'
+        }).append(cat);
+
+        catBg.append(container);
+
         function animateUpDown(el) {
-            el.animate({'marginTop': '-=10'}, sf, function() {
-                el.animate({'marginTop': '+=10'}, sf, function() {
+            el.animate({'marginTop': '-=10'}, 200, function() {
+                el.animate({'marginTop': '+=10'}, 200, function() {
                     animateUpDown(el);
                 });
             });
         }
         animateUpDown(cat);
 
-        var container = $('<div class="cat-container"></div>').css({
-            'top': topPos + 'px',
-            'left': '-450px'
-        }).append(cat);
-
-        catBackground.append(container);
-
-        container.animate({'left': '100%'}, st, 'linear', function() {
+        container.animate({'left': '100%'}, 10000, 'linear', function() {
             container.remove();
         });
     }
