@@ -97,6 +97,17 @@ table td {
     pointer-events: none; /* allow scrolling and clicks */
     overflow: hidden;
     z-index: 1; /* behind wrapper */
+	
+	@media (max-width: 768px) {
+    #cat-background {
+        position: absolute;
+        height: 100%;
+    }
+
+    body {
+        overflow-y: auto;
+    }
+}
 }
 </style>
 </head>
@@ -129,7 +140,7 @@ table td {
           <td>
 		  <img src="https://ghchart.rshah.org/409ba5/justinvforvendetta" alt="GitHub chart">
 		  </td></tr>
-		  <tr><td><img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=justinvforvendetta&theme=github_dark" alt="GitHub stats">
+		  <tr><td><img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=justinvforvendetta&theme=github_dark" alt="GitHub stats">
 		  </td></tr>
   </table>
   <!-- Stats table -->
