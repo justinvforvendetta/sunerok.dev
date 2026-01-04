@@ -13,7 +13,7 @@ var scbf = function(d, t) {
         'qbert.gif',
         'castlevania.gif',
 		'mario.gif',
-		'yoshi',
+		'yoshi.gif',
 		'bowser.gif'
     ];
 
