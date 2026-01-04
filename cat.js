@@ -15,7 +15,9 @@ var scbf = function(d, t) {
 		'mario.gif',
 		'yoshi.gif',
 		'bowser.gif',
-		'link.gif'
+		'pinkghost.gif',
+		'redghost.gif',
+		'tealghost.gif'
     ];
 
     var direction = 1; // 1 = left→right, -1 = right→left
