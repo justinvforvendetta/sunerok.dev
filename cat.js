@@ -9,12 +9,12 @@ var scbf = function(d, t) {
     // --- Hardcoded array of GIFs ---
     var gifs = [
         'megaman.gif',
-        'dragonwarrior.gif',
         'tmnt.gif',
-        'cat.gif',
         'qbert.gif',
-        'metroid.gif',
-        'castlevania.gif'
+        'castlevania.gif',
+		'mario.gif',
+		'yoshi',
+		'bowser.gif'
     ];
 
     var direction = 1; // 1 = left→right, -1 = right→left
