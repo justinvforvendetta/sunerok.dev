@@ -18,7 +18,7 @@ html {
 }
 body{
   margin: 0;
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -43,4 +43,6 @@ button:hover{
   padding: 1rem; /* Use relative padding */
   border-radius: 0.2rem;
   font-size: 1rem; /* Use relative font size */
+  margin: auto;
+  word-wrap: break-word;
 }
