@@ -6,194 +6,128 @@
 <title> s u n e r o k . d e v </title>
 <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
 <link rel="stylesheet" href="./assets/styles.css">
-
-<style>
-/* --- Global Styling --- */
-html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-}
-
-/* Center the entire page */
-body {
-    display: flex;
-    justify-content: center;
-}
-
-/* Main content wrapper */
-.wrapper {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 1100px;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-/* Headings & text */
-h1, h2, h3, p {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-/* Top section spacing */
-.top-section {
-    margin-bottom: 30px;
-}
-
-/* Achievements */
-.achievements {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-/* Images */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-/* Tables (GitHub stats) */
-table {
-    margin: 20px auto;
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 1000px;
-}
-
-table td {
-    padding: 10px;
-    text-align: center;
-}
-
-/* Social icons */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 30px 0;
-}
-
-.social-icons img {
-    height: 36px;
-    width: 36px;
-}
-
-/* Background cat stays behind everything */
-#cat-background {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* Mobile fixes */
-@media (max-width: 768px) {
-    .wrapper {
-        padding: 1px;
-    }
-
-    table, table tr, table td {
-        width: 100%;
-    }
-
-    table tr {
-        margin-bottom: 20px;
-    }
-}
-
-</style>
 </head>
 <body>
 <div id="cat-background"></div>
 <div class="wrapper">
+  <header class="hero-panel panel">
+    <div class="hero-copy">
+      <h1 class="site-title">sunerok.dev</h1>
+      <p class="hero-lead">
+        JustinVforVendetta @ Github.
+      </p>
+    </div>
+    <div class="identity-card">
+      <h2 class="profile-name">JustinVforVendetta <span>@ GitHub</span></h2>
+      <p class="identity-subtitle">Software Developer. Cryptography. Network Security.</p>
+      <p class="crypto-addresses">
+        <strong>XVG</strong><br>
+        <code>DBoF2jddpxZwg1fwcEGm6wDAEZzMbrweMP</code>
+      </p>
+      <p class="crypto-addresses">
+        <strong>ETH</strong><br>
+        <code>0x92FcE1777558144dECAFF0a4229118681D9477F2</code>
+      </p>
+    </div>
+  </header>
 
-  <!-- Top section: profile + crypto -->
-  <div class="top-section">    
-    <h2 class="profile-name">JustinVforVendetta @ Github  (Sunerok)</h2>
-    <p class="crypto-addresses">
-      <b>XVG: DBoF2jddpxZwg1fwcEGm6wDAEZzMbrweMP<br>
-      ETH: 0x92FcE1777558144dECAFF0a4229118681D9477F2</b>
-    </p>
-  </div>
+  <section class="panel">
+    <div class="section-heading">
+      <p class="section-kicker">GitHub</p>
+      <h2>
+        <a href="https://github.com/justinvforvendetta?tab=achievements" target="_blank" rel="noreferrer">
+          Achievements
+        </a>
+      </h2>
+    </div>
+    <div class="achievements">
+      <a href="https://github.com/justinvforvendetta?achievement=quickdraw&tab=achievements" target="_blank" rel="noreferrer"><img src="https://github.githubassets.com/assets/quickdraw-default--light-medium-5450fadcbe37.png" width="70" alt="Quickdraw achievement"></a>
+      <a href="https://github.com/justinvforvendetta?achievement=arctic-code-vault-contributor&tab=achievements" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/Schweinepriester/github-profile-achievements/main/images/arctic-code-vault-contributor-default.png" width="70" alt="Arctic Code Vault Contributor achievement"></a>
+      <a href="https://github.com/justinvforvendetta?achievement=pull-shark&tab=achievements" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/drknzz/GitHub-Achievements/main/Media/Badges/Pull-Shark/PNG/PullShark.png" width="70" alt="Pull Shark achievement"></a>
+      <a href="https://github.com/justinvforvendetta?achievement=yolo&tab=achievements" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/Schweinepriester/github-profile-achievements/main/images/yolo-default.png" width="70" alt="YOLO achievement"></a>
+      <a href="https://github.com/justinvforvendetta?achievement=pair-extraordinaire&tab=achievements" target="_blank" rel="noreferrer"><img src="https://github.githubassets.com/assets/pair-extraordinaire-default-579438a20e01.png" width="70" alt="Pair Extraordinaire achievement"></a>
+    </div>
+  </section>
 
-  <!-- Achievements -->
-  <p><a style="text-decoration:none" href="https://github.com/justinvforvendetta?tab=achievements" target="_blank"><b>Github Achievements:</b></a></p>
-  <div class="achievements">
-      <a href="https://github.com/justinvforvendetta?achievement=quickdraw&tab=achievements" target="_blank"><img src="https://github.githubassets.com/assets/quickdraw-default--light-medium-5450fadcbe37.png" width="70"></a>
-      <a href="https://github.com/justinvforvendetta?achievement=arctic-code-vault-contributor&tab=achievements" target="_blank"><img src="https://raw.githubusercontent.com/Schweinepriester/github-profile-achievements/main/images/arctic-code-vault-contributor-default.png" width="70"></a>
-      <a href="https://github.com/justinvforvendetta?achievement=pull-shark&tab=achievements" target="_blank"><img src="https://raw.githubusercontent.com/drknzz/GitHub-Achievements/main/Media/Badges/Pull-Shark/PNG/PullShark.png" width="70"></a>
-      <a href="https://github.com/justinvforvendetta?achievement=yolo&tab=achievements" target="_blank"><img src="https://raw.githubusercontent.com/Schweinepriester/github-profile-achievements/main/images/yolo-default.png" width="70"></a>
-      <a href="https://github.com/justinvforvendetta?achievement=pair-extraordinaire&tab=achievements" target="_blank"><img src="https://github.githubassets.com/assets/pair-extraordinaire-default-579438a20e01.png" width="70"></a>
-  </div>
+  <section class="panel stats-panel">
+    <div class="section-heading">
+      <p class="section-kicker">Activity</p>
+      <h2>Contribution Footprint</h2>
+    </div>
+    <div class="stats-grid">
+      <div class="chart-card">
+        <img src="https://ghchart.rshah.org/409ba5/justinvforvendetta" alt="GitHub contribution chart">
+      </div>
+      <div class="repo-card">
+        <h3>Notable repositories</h3>
+        <p class="muted">A short list of projects I have contributed to.</p>
+        <div class="repo-links">
+          <a href="https://github.com/bitcoin/bitcoin/commit/4c2cc63d84dc1c8bae1b620f34188b7c20b70019" target="_blank" rel="noreferrer">Bitcoin Core</a>
+          <a href="https://github.com/dogecoin/dogecoin/commit/be2ee04d5ff5bcc6019a4b00c5691c2229e395bf" target="_blank" rel="noreferrer">Dogecoin Core</a>
+          <a href="https://github.com/aircrack-ng/rtl8812au/commit/1877871420a01945deb76adb134fef8afe551fd8" target="_blank" rel="noreferrer">aircrack-ng</a>
+          <a href="https://github.com/vergecurrency/verge" target="_blank" rel="noreferrer">Verge Core</a>
+          <a href="https://github.com/spesmilo/electrumx/commit/8f459984dfad114be0a460167e8357caec4a88c1" target="_blank" rel="noreferrer">ElectrumX</a>
+          <a href="https://github.com/vergecurrency/tordroid" target="_blank" rel="noreferrer">Verge TorDroid</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- GitHub charts -->
-  <table>
-      <tr>
-          <td>
-		  <img src="https://ghchart.rshah.org/409ba5/justinvforvendetta" alt="GitHub chart">
-		  </td></tr>
-		  <tr><td align="center"><b>Top 5 notable repositories i've contributed to:</b><br>
-      <b><a href="https://github.com/bitcoin/bitcoin/commit/4c2cc63d84dc1c8bae1b620f34188b7c20b70019" target="_blank">Bitcoin Core</a></b><br>
-	  <b><a href="https://github.com/dogecoin/dogecoin/commit/be2ee04d5ff5bcc6019a4b00c5691c2229e395bf" target="_blank">Dogecoin Core</a></b><br>
-	  <b><a href="https://github.com/aircrack-ng/rtl8812au/commit/1877871420a01945deb76adb134fef8afe551fd8" target="_blank">aircrack-ng</a></b><br>
-	  <b><a href="https://github.com/vergecurrency/verge" target="_blank">Verge Core</a></b><br>
-	  <b><a href="https://github.com/spesmilo/electrumx/commit/8f459984dfad114be0a460167e8357caec4a88c1" target="_blank">ElectrumX</a></b><br>
-	  <b><a href="https://github.com/vergecurrency/tordroid" target="_blank">Verge TorDroid</a></b><br>
-    </td></tr>
-  </table>
+  <section class="panel">
+    <div class="section-heading">
+      <p class="section-kicker">Links</p>
+      <h2>Find Me Around The Web</h2>
+    </div>
+    <div class="social-icons">
+      <a href="https://x.com/justinvendetta" target="_blank" rel="noreferrer"><img src="./assets/twitter.png" height="36" width="36" alt="X"></a>
+      <a href="https://www.twitch.tv/sunerok" target="_blank" rel="noreferrer"><img src="./assets/twitch.png" height="36" width="36" alt="Twitch"></a>
+      <a href="https://discordapp.com/users/325022612428161024" target="_blank" rel="noreferrer"><img src="./assets/discord.png" height="36" width="36" alt="Discord"></a>
+      <a href="https://play.google.com/store/apps/developer?id=sunerok&hl=en_US&gl=US" target="_blank" rel="noreferrer"><img src="./assets/googleplay.png" height="36" width="36" alt="Google Play"></a>
+      <a href="https://www.linkedin.com/in/justinvendetta/" target="_blank" rel="noreferrer"><img src="./assets/linkedin.png" height="36" width="36" alt="LinkedIn"></a>
+      <a href="mailto:justinvforvendetta@gmail.com" target="_blank" rel="noreferrer"><img src="./assets/email.png" height="36" width="36" alt="Email"></a>
+      <a href="https://bsky.app/profile/sunerok.dev" target="_blank" rel="noreferrer"><img src="./assets/bluesky.png" height="36" width="36" alt="Bluesky"></a>
+      <a href="https://github.com/justinvforvendetta" target="_blank" rel="noreferrer"><img src="./assets/github.png" height="36" width="36" alt="GitHub"></a>
+      <a href="https://stackoverflow.com/users/5002756/sunerok" target="_blank" rel="noreferrer"><img src="./assets/stackoverflow.png" height="36" width="36" alt="Stack Overflow"></a>
+      <a href="https://www.instagram.com/sunerok/" target="_blank" rel="noreferrer"><img src="./assets/instagram.png" height="36" width="36" alt="Instagram"></a>
+    </div>
+  </section>
 
-  <!-- Social links -->
-  <div class="social-icons">
-      <a href="https://x.com/justinvendetta" target="_blank"><img src="./assets/twitter.png" height="36" width="36"></a>
-      <a href="https://www.twitch.tv/sunerok" target="_blank"><img src="./assets/twitch.png" height="36" width="36"></a>
-      <a href="https://discordapp.com/users/325022612428161024" target="_blank"><img src="./assets/discord.png" height="36" width="36"></a>
-      <a href="https://play.google.com/store/apps/developer?id=sunerok&hl=en_US&gl=US" target="_blank"><img src="./assets/googleplay.png" height="36" width="36"></a>
-      <a href="https://www.linkedin.com/in/justinvendetta/" target="_blank"><img src="./assets/linkedin.png" height="36" width="36"></a>
-      <a href="mailto:justinvforvendetta@gmail.com" target="_blank"><img src="./assets/email.png" height="36" width="36"></a>
-      <a href="https://bsky.app/profile/sunerok.dev" target="_blank"><img src="./assets/bluesky.png" height="36" width="36"></a>
-      <a href="https://github.com/justinvforvendetta" target="_blank"><img src="./assets/github.png" height="36" width="36"></a>
-      <a href="https://stackoverflow.com/users/5002756/sunerok" target="_blank"><img src="./assets/stackoverflow.png" height="36" width="36"></a>
-      <a href="https://www.instagram.com/sunerok/" target="_blank"><img src="./assets/instagram.png" height="36" width="36"></a>
-  </div>
-
-  <!-- Buy me a coffee -->
-  <p><a href="https://www.buymeacoffee.com/sunerok"><img height="50" width="120" src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=sunerok&button_colour=2e2929&font_colour=ffffff&font_family=Arial&outline_colour=ffffff&coffee_colour=FFDD00"></a></p>
-
-  <!-- DigitalOcean referral -->
-  <p>click here to get instant $200 USD, 60-day credit at digital ocean:&nbsp;
-  <a href="https://www.digitalocean.com/?refcode=cfe7ada68148&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" width="180" height="40"></a></p>
-  <p>click here to register with MiningRigRentals, and get discounts on renting hashpower for any pool:&nbsp;
-  <a href="https://www.miningrigrentals.com/register?ref=7036"><img src="./assets/mrr.png" alt="mrr page link" width="25%" height="25%"></a></p>
-</div> <!-- wrapper -->
+  <section class="panel support-panel">
+    <div class="section-heading">
+      <p class="section-kicker">Support</p>
+      <h2>Referrals And Coffee</h2>
+    </div>
+    <div class="support-grid">
+      <a class="support-card coffee-card" href="https://www.buymeacoffee.com/sunerok" target="_blank" rel="noreferrer">
+        <span>Buy me a coffee</span>
+        <img height="50" width="120" src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=sunerok&button_colour=2e2929&font_colour=ffffff&font_family=Arial&outline_colour=ffffff&coffee_colour=FFDD00" alt="Buy me a coffee">
+      </a>
+      <a class="support-card" href="https://www.digitalocean.com/?refcode=cfe7ada68148&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge" target="_blank" rel="noreferrer">
+        <span>Get a $200 USD, 60-day DigitalOcean credit</span>
+        <img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" width="180" height="40">
+      </a>
+      <a class="support-card mrr-card" href="https://www.miningrigrentals.com/register?ref=7036" target="_blank" rel="noreferrer">
+        <span>Register with MiningRigRentals for hashpower discounts</span>
+        <img src="./assets/mrr.png" alt="MiningRigRentals page link">
+      </a>
+    </div>
+  </section>
+</div>
 
 <!-- Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="./assets/github-profile-widget.js"></script>
 <script src="./cat.js"></script>
 
-<!-- Random background color -->
 <script>
-function random_bg_color() {
-    const x = Math.floor(Math.random() * 256);
-    const y = Math.floor(Math.random() * 256);
-    const z = Math.floor(Math.random() * 256);
-    document.body.style.background = `rgb(${x},${y},${z})`;
+function applyThemeColors() {
+    const hue = Math.floor(Math.random() * 360);
+    document.documentElement.style.setProperty('--theme-hue', hue);
+    document.documentElement.style.setProperty('--theme-accent', `hsl(${hue} 88% 62%)`);
+    document.documentElement.style.setProperty('--theme-accent-soft', `hsla(${hue} 88% 62% / 0.18)`);
+    document.documentElement.style.setProperty('--theme-accent-strong', `hsla(${hue} 88% 62% / 0.35)`);
 }
-random_bg_color();
+applyThemeColors();
 </script>
 
 </body>
