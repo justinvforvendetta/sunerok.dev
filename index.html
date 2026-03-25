@@ -22,11 +22,19 @@
       <p class="identity-subtitle">Software Developer. Cryptography. Network Security.</p>
       <p class="crypto-addresses">
         <strong>XVG</strong><br>
-        <code>DBoF2jddpxZwg1fwcEGm6wDAEZzMbrweMP</code>
+        <button class="copy-address" data-copy-value="DBoF2jddpxZwg1fwcEGm6wDAEZzMbrweMP" aria-label="Copy XVG address">
+          <code>DBoF2jddpxZwg1fwcEGm6wDAEZzMbrweMP</code>
+          <span class="copy-icon" aria-hidden="true"></span>
+          <span class="copy-bubble" aria-hidden="true">Copied</span>
+        </button>
       </p>
       <p class="crypto-addresses">
         <strong>ETH</strong><br>
-        <code>0x92FcE1777558144dECAFF0a4229118681D9477F2</code>
+        <button class="copy-address" data-copy-value="0x92FcE1777558144dECAFF0a4229118681D9477F2" aria-label="Copy ETH address">
+          <code>0x92FcE1777558144dECAFF0a4229118681D9477F2</code>
+          <span class="copy-icon" aria-hidden="true"></span>
+          <span class="copy-bubble" aria-hidden="true">Copied</span>
+        </button>
       </p>
     </div>
   </header>
@@ -127,7 +135,34 @@ function applyThemeColors() {
     document.documentElement.style.setProperty('--theme-accent-soft', `hsla(${hue} 88% 62% / 0.18)`);
     document.documentElement.style.setProperty('--theme-accent-strong', `hsla(${hue} 88% 62% / 0.35)`);
 }
+
+async function copyAddress(button) {
+    const value = button.dataset.copyValue;
+    if (!value) return;
+
+    try {
+        await navigator.clipboard.writeText(value);
+    } catch (error) {
+        const input = document.createElement('input');
+        input.value = value;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        input.remove();
+    }
+
+    button.classList.add('copied');
+    clearTimeout(button._copyTimeout);
+    button._copyTimeout = setTimeout(() => {
+        button.classList.remove('copied');
+    }, 1400);
+}
+
 applyThemeColors();
+
+document.querySelectorAll('.copy-address').forEach((button) => {
+    button.addEventListener('click', () => copyAddress(button));
+});
 </script>
 
 </body>
