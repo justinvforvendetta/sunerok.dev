@@ -544,6 +544,46 @@ button {
     0 20px 32px rgba(0, 0, 0, 0.28);
 }
 
+.ascii-footer {
+  padding: 24px 22px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+    rgba(5, 10, 18, 0.82);
+}
+
+.ascii-graffiti {
+  display: inline-block;
+  margin: 0;
+  min-width: max-content;
+  white-space: pre;
+  color: color-mix(in srgb, var(--theme-accent) 68%, #ffffff 32%);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.42rem, 1vw, 0.82rem);
+  line-height: 1;
+  text-shadow:
+    0 0 14px var(--theme-accent-soft),
+    0 0 26px var(--theme-accent-faint);
+  opacity: 0.92;
+}
+
+.ascii-footer:hover {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.02),
+    0 0 34px rgba(255, 170, 64, 0.22),
+    var(--shadow-lg);
+}
+
+.ascii-footer:hover .ascii-graffiti {
+  text-decoration: none;
+  color: #ffd37a;
+  text-shadow:
+    0 0 16px rgba(255, 188, 92, 0.45),
+    0 0 30px rgba(255, 140, 64, 0.28);
+}
+
 .hero-copy {
   animation: fade-slide 900ms ease both;
 }
@@ -605,6 +645,16 @@ button {
   .hero-lead,
   .identity-card {
     animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .ascii-footer {
+    padding: 18px 14px;
+  }
+
+  .ascii-graffiti {
+    font-size: 0.5rem;
   }
 }
 
