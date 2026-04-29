@@ -1,4 +1,4 @@
-var scbf = function(d, t) { 
+var scbf = function(d, t) {
     var c = d.createElement(t),
         i = d.createElement(t),
         s = d.getElementsByTagName(t)[0],
@@ -6,26 +6,25 @@ var scbf = function(d, t) {
         st = 10000,
         img = '/nyan/img/design/';
 
-    // --- Hardcoded array of GIFs ---
     var gifs = [
         'megaman.gif',
         'tmnt.gif',
         'qbert.gif',
         'castlevania.gif',
-		'mario.gif',
-		'yoshi.gif',
-		'bowser.gif',
-		'pinkghost.gif',
-		'redghost.gif',
-		'tealghost.gif'
+        'mario.gif',
+        'yoshi.gif',
+        'bowser.gif',
+        'pinkghost.gif',
+        'redghost.gif',
+        'tealghost.gif'
     ];
 
-    var direction = 1; // 1 = left→right, -1 = right→left
+    var direction = 1;
 
-    // bobbing animation
     var up = function() {
         $(this).animate({ marginTop: '-=10' }, sf, i.down);
     };
+
     var down = function() {
         $(this).animate({ marginTop: '+=10' }, sf, i.up);
     };
@@ -48,11 +47,11 @@ var scbf = function(d, t) {
 
     $(c).addClass('c').css({
         position: 'fixed',
-        top: '200px',
+        top: '62vh',
         left: '-400px',
-        zIndex: 100,
-        width: '350px',
-        height: '350px',
+        zIndex: 1,
+        width: '260px',
+        height: '260px',
         pointerEvents: 'none',
         background: 'none',
         overflow: 'visible'
@@ -61,7 +60,6 @@ var scbf = function(d, t) {
     s.parentNode.insertBefore(c, s);
 
     function walk() {
-        // 🎲 pick a new GIF every pass
         var randomGif = gifs[Math.floor(Math.random() * gifs.length)];
         $(i).css({
             backgroundImage: 'url(' + img + randomGif + ')'
@@ -87,8 +85,8 @@ var scbf = function(d, t) {
             st,
             'linear',
             function() {
-                direction *= -1; // flip direction
-                walk();          // next pass, new GIF
+                direction *= -1;
+                walk();
             }
         );
     }
@@ -97,7 +95,5 @@ var scbf = function(d, t) {
 };
 
 $(document).ready(function() {
-    console.log("document loaded");
     scbf(document, 'div');
-    k = [];
 });
